@@ -1,0 +1,31 @@
+header{
+    font-size: 28px;
+    font-style: italic;
+    font-weight: bold;
+    -webkit-text-stroke: 1px;
+}
+.add-form{
+    margin-top: 15px;
+    padding-bottom: 5px;
+}
+.title{
+    height: 10vh;
+    text-align: center;
+    border: solid;
+    border-color: aquamarine;
+    box-shadow: 3px;
+}
+.text{
+    height: 15vh;
+    text-align: center;
+    margin-top: 10px;
+    border: solid;
+    border-color: aquamarine;
+}
+.add-news{
+    margin-top: 15px;
+    border: solid;    
+    width: 20vh;
+    height: 5vh;
+    font-size: 18px;
+}
