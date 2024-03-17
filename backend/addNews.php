@@ -10,14 +10,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $insert_statement->bind_param('ss', $title, $text);
 
         if ($insert_statement->execute()) {
-            echo "News added successfully";
+            $response= array("success"=> true, "message"=>"News added successfully");
+            echo json_encode($response);
         } else {
-            echo "Error: " . $insert_statement->error;
+            $response=array("success"=>false,"message"=>"error: ".$insert_statement->error);
+            echo json_encode($response);
         }
     } else {
-        echo "Incomplete form data";
+        $response=array("success"=>false,"message"=>"incomplete form");
+        echo json_encode($response);
     }
 } else {
-    echo "Form submission error";
+    $response=array("success"=>false,"message"=>"error occured");
+    echo json_encode($response);
 }
 ?>
