@@ -1,8 +1,12 @@
 <?php
 
 header("Access-Control-Allow-Origin: *"); 
-header("Access-Control-Allow-Methods: POST, GET, OPTIONS"); 
+header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE");
 header("Access-Control-Allow-Headers: Content-Type, Authorization");
+header("Access-Control-Allow-Credentials: true");
+header("Content-Type: application/json");
+header('Content-Type: application/json');
+
 
 $host = "localhost";
 $db_user = "root";
