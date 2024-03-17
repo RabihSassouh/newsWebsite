@@ -23,8 +23,8 @@ displayNews();
 
 
 addNews.click(function() {
-    let title=addNewsTitle.value;
-    let text=addNewsText.value;
+    let title=addNewsTitle.val();
+    let text=addNewsText.val();
 
     $.ajax({
         url: 'http://localhost/newswebsite/backend/addNews.php',
@@ -33,7 +33,13 @@ addNews.click(function() {
         dataType:'json',
         success: function(response) {
             
-            console.log(response);
+            if (response.success) {
+                displayNews();
+                addNewsTitle.val('');
+                addNewsText.val('');
+            } else {
+                console.error("Error: " + response.message);
+            }
         },
         error: function(xhr, status, error) {
             console.error("AJAX Error: ", status, error);
@@ -42,6 +48,3 @@ addNews.click(function() {
         
     });
 });
-// displayNews();
-// addNewsTitle.value('');
-// addNewsText.value('');
